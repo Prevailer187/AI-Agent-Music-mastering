@@ -1,0 +1,55 @@
+{
+  "examples": {
+    "DopeForeignNight": {
+      "eq": [
+        {"freq": 30, "gain": -2, "q": 0.7},
+        {"freq": 45, "gain": 2, "q": 0.8},
+        {"freq": 100, "gain": 1, "q": 1.2},
+        {"freq": 400, "gain": -1, "q": 1.5},
+        {"freq": 2000, "gain": 2, "q": 1.2},
+        {"freq": 5000, "gain": 3.5, "q": 1},
+        {"freq": 10000, "gain": 5, "q": 0.8},
+        {"freq": 16000, "gain": 4, "q": 0.7}
+      ],
+      "compressor": {"enabled": true, "threshold": -18, "ratio": 1.2, "attack": 40, "release": 200},
+      "limiter": {"enabled": true, "threshold": -2, "ceiling": -1, "release": 80, "knee": 2},
+      "ms": {"enabled": true, "width": 55, "side_low_cut": 80, "side_level": 4, "side_air": 4, "mid_hi": 1.5},
+      "tape": {"enabled": true, "drive": 10, "mix": 100},
+      "target_lufs": -14, "target_lra": 7, "true_peak": -1
+    },
+    "TheSweetTrapPart2": {
+      "eq": [
+        {"freq": 30, "gain": -2, "q": 0.7},
+        {"freq": 55, "gain": -1.5, "q": 0.8},
+        {"freq": 100, "gain": 1, "q": 1.2},
+        {"freq": 400, "gain": -1, "q": 1.5},
+        {"freq": 2000, "gain": 2, "q": 1.2},
+        {"freq": 5000, "gain": 2.5, "q": 1},
+        {"freq": 10000, "gain": 3.5, "q": 0.8},
+        {"freq": 16000, "gain": 5.5, "q": 0.7}
+      ],
+      "compressor": {"enabled": false},
+      "limiter": {"enabled": true, "threshold": -2, "ceiling": -1, "release": 80, "knee": 2},
+      "ms": {"enabled": true, "width": 60, "side_low_cut": 80, "side_level": 5, "side_air": 5, "mid_hi": 1.5},
+      "tape": {"enabled": true, "drive": 10, "mix": 100},
+      "target_lufs": -14, "target_lra": 7, "true_peak": -1
+    },
+    "Whisper": {
+      "eq": [
+        {"freq": 30, "gain": -2, "q": 0.7},
+        {"freq": 45, "gain": 1.5, "q": 0.8},
+        {"freq": 100, "gain": 1, "q": 1.2},
+        {"freq": 400, "gain": -1, "q": 1.5},
+        {"freq": 2000, "gain": 2, "q": 1.2},
+        {"freq": 5000, "gain": 3, "q": 1},
+        {"freq": 10000, "gain": 4.5, "q": 0.8},
+        {"freq": 16000, "gain": 4, "q": 0.7}
+      ],
+      "compressor": {"enabled": false},
+      "limiter": {"enabled": true, "threshold": -2.5, "ceiling": -1, "release": 80, "knee": 2},
+      "ms": {"enabled": true, "width": 65, "side_low_cut": 80, "side_level": 6, "side_air": 5, "mid_hi": 2},
+      "tape": {"enabled": true, "drive": 10, "mix": 100},
+      "target_lufs": -14, "target_lra": 7, "true_peak": -1
+    }
+  }
+}
