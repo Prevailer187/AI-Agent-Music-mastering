@@ -53,3 +53,7 @@ Stereo width is reported as the **Side-to-Mid RMS ratio**. This is distinct from
 - EQ, saturation, widening, and limiting are creative operations. Listen to the final WAV before release.
 - The public repository contains audio assets because the repository owner explicitly requested that they be included. Do not add confidential or unreleased material without confirming repository visibility.
 - For explicit material, use a separate clean/radio edit rather than overwriting the original master.
+
+## Audio catalog freeze
+
+The existing audio catalog is frozen. Do not add, replace, or update WAV, FLAC, MP3, M4A, AIFF, OGG, or OPUS files in future commits. See [`NO_NEW_AUDIO.md`](NO_NEW_AUDIO.md); pull requests that add audio are rejected automatically by the audio-freeze GitHub Action.

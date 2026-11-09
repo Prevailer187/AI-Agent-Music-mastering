@@ -3,3 +3,13 @@ __pycache__/
 .DS_Store
 .venv/
 .env
+
+# Audio catalog is frozen. These patterns do not affect already tracked files.
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.aiff
+*.aif
+*.ogg
+*.opus

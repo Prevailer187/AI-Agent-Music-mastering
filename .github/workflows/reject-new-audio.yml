@@ -1,0 +1,33 @@
+name: Reject new audio files
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  audio-freeze:
+    name: Enforce audio catalog freeze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject added audio files
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="${{ github.event.pull_request.base.sha }}"
+          head="${{ github.event.pull_request.head.sha }}"
+          added_audio="$(git diff --name-status "$base" "$head" | awk '$1 == "A" || $1 == "R" || $1 == "C" {print $NF}' | grep -Ei '\.(wav|flac|mp3|m4a|aiff|aif|ogg|opus)$' || true)"
+          if [[ -n "$added_audio" ]]; then
+            echo 'Audio catalog is frozen. The following new audio files were detected:'
+            printf '%s\n' "$added_audio"
+            exit 1
+          fi
+          echo 'No new audio files detected.'
